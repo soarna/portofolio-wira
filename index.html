@@ -83,6 +83,8 @@
   .navbar nav a:hover, .navbar nav a:focus-visible{ color:var(--ink); }
   .navbar nav a:hover::after, .navbar nav a:focus-visible::after{ width:100%; }
   .navbar nav a:focus-visible{ outline:1px solid var(--sage); outline-offset:4px; }
+  .navbar nav a.active{ color:var(--ink); }
+  .navbar nav a.active::after{ width:100%; }
 
   /* ============ HERO: FOTO KIRI — TEKS KANAN ============ */
   .hero{
@@ -385,7 +387,8 @@
 <header class="navbar">
   <span class="brand">Blog Saya</span>
   <nav aria-label="Navigasi utama">
-    <a href="#cv">Curriculum Vitae</a>
+    <a href="index.html" class="active">Biografi</a>
+    <a href="cv.html">Curriculum Vitae</a>
     <a href="#project">Project</a>
     <a href="#contact">Contact</a>
   </nav>
