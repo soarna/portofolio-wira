@@ -13,16 +13,16 @@
 
   :root{
     --white:      #ffffff;
-    --paper:      #f4f7fc;
-    --ink:        #101a2e;
-    --ink-dim:    #5b6a86;
-    --line:       #dde5f2;
-    --sage:       #2c5aa0;
-    --sage-deep:  #16335c;
-    --sage-soft:  #eaf1fb;
-    --rose:       #aecbef;
-    --moon:       #cfe0f7;
-    --moon-line:  #a9c3e6;
+    --paper:      #ecfbfd;
+    --ink:        #0c2b30;
+    --ink-dim:    #4c7278;
+    --line:       #cdeef3;
+    --sage:       #0891b2;
+    --sage-deep:  #164e63;
+    --sage-soft:  #ecfeff;
+    --rose:       #67e8f9;
+    --moon:       #a5f3fc;
+    --moon-line:  #22d3ee;
 
     --font-display: 'Fraunces', 'Georgia', serif;
     --font-body: 'Inter', -apple-system, sans-serif;
@@ -64,27 +64,18 @@
     font-size:19px;
     letter-spacing:.01em;
   }
-  .navbar nav{ display:flex; gap:clamp(20px,4vw,46px); }
+  .navbar nav{ display:flex; gap:clamp(4px,1.4vw,10px); }
   .navbar nav a{
     font-size:13.5px;
     letter-spacing:.03em;
     color:var(--ink-dim);
-    position:relative;
-    padding-bottom:4px;
-    transition:color .25s ease;
+    padding:9px 18px;
+    border-radius:20px;
+    transition:background .25s ease, color .25s ease;
   }
-  .navbar nav a::after{
-    content:"";
-    position:absolute; left:0; bottom:0;
-    width:0; height:1.5px;
-    background:var(--sage);
-    transition:width .3s ease;
-  }
-  .navbar nav a:hover, .navbar nav a:focus-visible{ color:var(--ink); }
-  .navbar nav a:hover::after, .navbar nav a:focus-visible::after{ width:100%; }
-  .navbar nav a:focus-visible{ outline:1px solid var(--sage); outline-offset:4px; }
-  .navbar nav a.active{ color:var(--ink); }
-  .navbar nav a.active::after{ width:100%; }
+  .navbar nav a:hover, .navbar nav a:focus-visible{ color:var(--sage-deep); background:var(--sage-soft); }
+  .navbar nav a:focus-visible{ outline:2px solid var(--sage); outline-offset:2px; }
+  .navbar nav a.active{ color:var(--white); background:var(--sage); }
 
   /* ============ HERO: FOTO KIRI — TEKS KANAN ============ */
   .hero{
@@ -298,6 +289,39 @@
   .cv-list li:last-child{ border-bottom:1px solid var(--line); }
   .cv-list li span:first-child{ color:var(--ink); font-weight:600; }
 
+  /* ============ SKILLS ============ */
+  .skills-list{
+    display:flex;
+    flex-direction:column;
+    gap:38px;
+    max-width:640px;
+  }
+  .skill-group h3{
+    font-family:var(--font-display);
+    font-size:17px;
+    color:var(--sage-deep);
+    margin-bottom:6px;
+  }
+  .skill-group ul{ display:flex; flex-direction:column; }
+  .skill-group li{
+    display:flex;
+    align-items:baseline;
+    gap:12px;
+    padding:12px 0;
+    border-top:1px solid var(--line);
+    font-size:15.5px;
+    color:var(--ink-dim);
+  }
+  .skill-group li:last-child{ border-bottom:1px solid var(--line); }
+  .skill-group li::before{
+    content:"";
+    flex:0 0 auto;
+    width:6px; height:6px;
+    border-radius:50%;
+    background:var(--sage);
+  }
+  .skill-group li strong{ color:var(--ink); font-weight:600; }
+
   /* ============ PROJECT ============ */
   .project-grid{
     display:grid;
@@ -330,25 +354,30 @@
   }
   .project-card p{ color:var(--ink-dim); font-size:15px; margin-bottom:18px; }
   .project-link{
+    display:inline-block;
     font-size:13px;
     font-weight:600;
-    color:var(--ink);
-    border-bottom:1px solid var(--ink);
-    padding-bottom:2px;
+    color:var(--sage-deep);
+    background:var(--sage-soft);
+    padding:9px 18px;
+    border-radius:20px;
+    transition:background .25s ease, color .25s ease;
   }
-  .project-link:hover, .project-link:focus-visible{ color:var(--sage); border-color:var(--sage); }
+  .project-link:hover, .project-link:focus-visible{ background:var(--sage); color:var(--white); }
 
   /* ============ CONTACT ============ */
-  .contact-list{ display:flex; gap:36px; flex-wrap:wrap; margin-top:6px; }
+  .contact-list{ display:flex; gap:16px; flex-wrap:wrap; margin-top:6px; }
   .contact-list a{
+    display:inline-block;
     font-size:15px;
     font-weight:600;
-    color:var(--ink-dim);
-    padding-bottom:5px;
-    border-bottom:1px solid transparent;
-    transition:all .25s ease;
+    color:var(--sage-deep);
+    background:var(--sage-soft);
+    padding:11px 22px;
+    border-radius:24px;
+    transition:background .25s ease, color .25s ease;
   }
-  .contact-list a:hover, .contact-list a:focus-visible{ color:var(--ink); border-color:var(--sage); }
+  .contact-list a:hover, .contact-list a:focus-visible{ background:var(--sage); color:var(--white); }
 
   footer{
     text-align:center;
@@ -385,11 +414,11 @@
 
 <!-- ============ NAVBAR ============ -->
 <header class="navbar">
-  <span class="brand">Blog Saya</span>
+  <span class="brand">Blog Portofolio</span>
   <nav aria-label="Navigasi utama">
     <a href="index.html" class="active">Biografi</a>
     <a href="cv.html">Curriculum Vitae</a>
-    <a href="#project">Project</a>
+    <a href="project.html">Project</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
@@ -461,14 +490,72 @@
     <h1 class="name">Wiradharma Putra</h1>
     <p class="role-line">Software Dev & Multimedia Enthusiast</p>
     <p class="bio">
-      Perkenalkan, saya <strong>Wira</strong>, seorang individu yang berfokus pada pengembangan perangkat lunak dan bidang multimedia, dengan pengalaman menggunakan Python, Java, JavaScript, HTML, CSS, dan SQL serta berbagai aplikasi desain dan editing seperti Adobe Photoshop dan Adobe Premiere. Terbiasa mengembangkan website, aplikasi sederhana, dan game menggunakan Unity.
+      Perkenalkan, saya <strong>Wira</strong>, seorang individu yang berfokus pada pengembangan perangkat lunak dan bidang multimedia, dengan pengalaman menggunakan Python, Java, JavaScript, HTML, CSS, dan SQL serta berbagai aplikasi desain dan editing seperti Adobe Photoshop dan Adobe Premiere. Terbiasa mengembangkan website, aplikasi sederhana, dan game menggunakan Unity. <br>
     </p>
   </div>
+</section>
+<!-- ============ ABOUT ME ============ -->
+<section id="about" class="section-inner">
+  <div class="section-head">
+    <h2>About Me</h2>
+  </div>
+  <p class="bio" style="max-width:720px;">
+    Perkenalkan, Saya I Gusti Bagus Wiradharma Putra, seorang yang memiliki 
+ketertarikan pada pengembangan perangkat lunak/software dan multimedia. 
+Saya memiliki pengalaman menggunakan berbagai bahasa pemrograman seperti Python, C++, Java, JavaScript, 
+HTML, CSS, dan SQL, serta software desain dan editing seperti Adobe 
+Photoshop dan Adobe Premiere Pro.
+<br> <br>
+Saya juga tertarik pada pengembangan game dan telah menggunakan Unity 
+dan RPG Maker MV. Saya tertarik pada pengembangan game karena saya suka
+melihat kode program yang saya susun dapat ditampilkan secara visual
+yang seru.
+<br> <br>
+Melalui portofolio ini, saya ingin menunjukan pengalaman hidup dan proyek
+yang saya telah kerjakan, serta 
+kemampuan, dan pengalaman yang telah saya peroleh selama menempuh 
+pendidikan di ITB STIKOM Bali sebagai lulusan S1 Sistem Informasi ataupun pada pengalaman kerja saya 
+sebagai bagian dari persiapan 
+untuk memasuki dunia kerja dan berkembang sebagai seorang software 
+developer.
+  </p>
 </section>
 
 <div class="divider"></div>
 
+<!-- ============ SKILLS ============ -->
+<section id="skills" class="section-inner">
+  <div class="section-head">
+    <h2>Skills</h2>
+  </div>
 
+<div class="skills-list">
+    <div class="skill-group">
+      <ul>
+        <li>Pemograman Web dan Perangkat Lunak<br>
+          Saya Berfokus kepada pemograman web, terutama penggunaan bahasa
+        HTML5, PHP, Javascript ataupun Style seperti CSS. namun saya juga Terbiasa
+      dalam pembuatan software desktop, dengan bahasa Java ataupun Python.</li>
+      </ul>
+      <ul>
+        <li>Multimedia dan 3D<br>
+          Saya memiliki second interest pada multimedia, terutama animasi dan 3D.
+          saya sering menggunakan produk dari Adobe untuk mengedit, mendesain dan
+          merancang media agar terlihat menarik. Saya juga tertarik pada software
+          Blender yang membuat saya bisa melakukan 3D Modeling.
+      </li>
+      </ul>
+      <ul>
+        <li>Game Developing<br>
+          Saya mempelajari dan gemar dalam pembuatan game yang saya lakukan sebagai hobi,
+          saya suka melihat karya yang saya buat dapat terlihat secara visual dan interaktif.
+          untuk saya sendiri, saya lebih gemar membuat permainan yang membuat audiens rileks,
+          dan untuk engine sendiri, saya sudah mempelajari Unity, GameMaker, RPGMMV, dan Roblox Studio.
+      </li>
+      </ul>
+</section>
+
+<div class="divider"></div>
 <!-- ============ PROJECT ============ -->
 <section id="project" class="section-inner">
   <div class="section-head">
@@ -488,7 +575,7 @@
 
     <article class="project-card">
       <span class="project-num">02</span>
-      <img src="pustaka.PNG" alt="Potret web pustaka"> <br>
+      <img src="pustaka.png" alt="Potret web pustaka"> <br>
       <h3>PustakaOne Online</h3>
       <p>Aplikasi perpustakaan digital berbasis web. Pengguna dapat mencari, mengunduh, dan menyimpan buku ke wishlist. Pustakawan dapat mengelola koleksi buku dan pengguna. </p>
       <a href="https://github.com/soarna/Pustakaone" class="project-link">Lihat Detail...</a>
@@ -496,7 +583,7 @@
 
     <article class="project-card">
       <span class="project-num">03</span>
-       <img src="budaya.PNG" alt="Potret web budaya"> <br>
+       <img src="budaya.png" alt="Potret web budaya"> <br>
       <h3>D'Bali Budaya Prototype</h3>
       <p>Prototype yang dibuat menggunakan figma, sebuah sistem yang direncanakan akan memuat detail dari budaya tradisional Bali.</p>
       <a href="https://www.figma.com/proto/dAHF3LanFFr1Uq7LPDxjGJ/D-Bali?node-id=70-870&starting-point-node-id=70%3A870&t=qpJi4ZUJHkjUDI8G-1" class="project-link">Lihat Detail...</a>
@@ -521,7 +608,7 @@
   </div>
 </section>
 
-<footer>Nama Anda — © 2026</footer>
+<footer>Terima kasih atas membaca Portofolio ini || Wiradharma Putra || 2026</footer>
 
 </body>
 </html>

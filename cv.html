@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Curriculum Vitae || Wiradharma Putra</title>
+<title>Curriculum Vitae — Wiradharma Putra</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,16 +13,16 @@
 
   :root{
     --white:      #ffffff;
-    --paper:      #f4f7fc;
-    --ink:        #101a2e;
-    --ink-dim:    #5b6a86;
-    --line:       #dde5f2;
-    --sage:       #2c5aa0;
-    --sage-deep:  #16335c;
-    --sage-soft:  #eaf1fb;
-    --rose:       #aecbef;
-    --moon:       #cfe0f7;
-    --moon-line:  #a9c3e6;
+    --paper:      #ecfbfd;
+    --ink:        #0c2b30;
+    --ink-dim:    #4c7278;
+    --line:       #cdeef3;
+    --sage:       #0891b2;
+    --sage-deep:  #164e63;
+    --sage-soft:  #ecfeff;
+    --rose:       #67e8f9;
+    --moon:       #a5f3fc;
+    --moon-line:  #22d3ee;
 
     --font-display: 'Fraunces', 'Georgia', serif;
     --font-body: 'Inter', -apple-system, sans-serif;
@@ -64,27 +64,18 @@
     font-size:19px;
     letter-spacing:.01em;
   }
-  .navbar nav{ display:flex; gap:clamp(20px,4vw,46px); }
+  .navbar nav{ display:flex; gap:clamp(4px,1.4vw,10px); }
   .navbar nav a{
     font-size:13.5px;
     letter-spacing:.03em;
     color:var(--ink-dim);
-    position:relative;
-    padding-bottom:4px;
-    transition:color .25s ease;
+    padding:9px 18px;
+    border-radius:20px;
+    transition:background .25s ease, color .25s ease;
   }
-  .navbar nav a::after{
-    content:"";
-    position:absolute; left:0; bottom:0;
-    width:0; height:1.5px;
-    background:var(--sage);
-    transition:width .3s ease;
-  }
-  .navbar nav a:hover, .navbar nav a:focus-visible{ color:var(--ink); }
-  .navbar nav a:hover::after, .navbar nav a:focus-visible::after{ width:100%; }
-  .navbar nav a:focus-visible{ outline:1px solid var(--sage); outline-offset:4px; }
-  .navbar nav a.active{ color:var(--ink); }
-  .navbar nav a.active::after{ width:100%; }
+  .navbar nav a:hover, .navbar nav a:focus-visible{ color:var(--sage-deep); background:var(--sage-soft); }
+  .navbar nav a:focus-visible{ outline:2px solid var(--sage); outline-offset:2px; }
+  .navbar nav a.active{ color:var(--white); background:var(--sage); }
 
   .btn{
     font-size:13.5px;
@@ -213,11 +204,11 @@
 
 <!-- ============ NAVBAR (sama dengan halaman utama) ============ -->
 <header class="navbar">
-  <span class="brand">Blog Saya</span>
+  <span class="brand">Blog Portofolio</span>
   <nav aria-label="Navigasi utama">
     <a href="index.html">Biografi</a>
     <a href="cv.html" class="active">Curriculum Vitae</a>
-    <a href="index.html#project">Project</a>
+    <a href="project.html">Project</a>
     <a href="index.html#contact">Contact</a>
   </nav>
 </header>
@@ -227,7 +218,8 @@
   <div class="section-head">
     <p class="eyebrow">Riwayat Hidup</p>
     <h2>Curriculum Vitae</h2>
-    <p>Berikut CV lengkap saya. Bisa dilihat langsung di bawah, atau unduh untuk menyimpan CV tersebut.</p>
+    <p>Berikut adalah informasi seputar riwayat hidup
+      yang saya miliki yang disimpan berupa Curriculum Vitae atau CV</p>
   </div>
 
   <div class="cv-layout">
@@ -239,16 +231,10 @@
     <!-- Tombol unduh & info singkat -->
     <div class="cv-side">
       <div class="cv-side-card">
-        <h3>Unduh CV</h3>
         <a class="btn btn-primary" href="cv.pdf" download>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
           Unduh CV
         </a>
-      </div>
-      <div class="cv-side-card">
-        <h3>Informasi Lainnya</h3>
-        <p>Hubungi saya langsung lewat halaman kontak.</p>
-        <a class="btn btn-outline" href="index.html#contact">Contact</a>
       </div>
     </div>
   </div>
